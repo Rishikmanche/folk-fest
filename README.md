@@ -1,7 +1,7 @@
 # Vishwam AI - Folk Fest Data Collection Frontend
 
 🌟 **Project Overview**  
-This project is part of a data collection initiative by **Vishwam AI**, in collaboration with **Swecha Telangana** and **IIT HYDERABAD**, aimed at building a localized Large Language Model (LLM) for India.  
+This project is part of a data collection initiative by **Vishwam AI**, in collaboration with **Swecha Telangana** and **IIIT HYDERABAD**, aimed at building a localized Large Language Model (LLM) for India.  
 Foreign LLMs often struggle to provide accurate local information due to a lack of relevant local data.  
 To solve this, Vishwam AI is building a local LLM focused on Indian culture, history, and knowledge.
 
