@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telugu Folk Stories - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="decorative-elements">
+        <div class="folk-motif">🎵</div>
+        <div class="folk-motif">🏺</div>
+        <div class="folk-motif">🌾</div>
+        <div class="folk-motif">🎭</div>
+        <div class="folk-motif">🪘</div>
+        <div class="folk-motif">🎪</div>
+    </div>
+
+    <div class="login-container">
+        <div class="header">
+            <h1 class="app-title">Telangana Folk Stories</h1>
+            <p class="app-subtitle">Welcome to Folk Stories Portal</p>
+        </div>
+
+        <form id="loginForm" class="login-form">
+            <div class="form-group">
+                <label class="form-label" for="phoneNumber">Phone Number</label>
+                <input 
+                    type="tel" 
+                    id="phoneNumber" 
+                    class="form-input" 
+                    placeholder="Enter your phone number"
+                    maxlength="15"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    class="form-input" 
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="login-btn" id="loginBtn">
+                Login
+            </button>
+
+            <button type="button" class="login-with-otp-btn" id="loginWithOtpBtn">
+                Login with OTP
+            </button>
+
+            <div class="error-message" id="loginError"></div>
+            <div class="success-message" id="loginSuccess"></div>
+        </form>
+
+        <div class="forgot-password">
+            <a href="#" class="forgot-link" id="forgotPasswordLink">
+                Forgot Password?
+            </a>
+        </div>
+
+        <div class="otp-section" id="otpSection">
+            <h3 class="otp-title">OTP Verification</h3>
+            <p class="otp-description" id="otpDescription">
+                Please enter the 6-digit OTP sent to your phone number
+            </p>
+            
+            <div class="otp-input" id="otpInputContainer">
+                <input type="text" class="otp-digit" maxlength="1" data-index="0">
+                <input type="text" class="otp-digit" maxlength="1" data-index="1">
+                <input type="text" class="otp-digit" maxlength="1" data-index="2">
+                <input type="text" class="otp-digit" maxlength="1" data-index="3">
+                <input type="text" class="otp-digit" maxlength="1" data-index="4">
+                <input type="text" class="otp-digit" maxlength="1" data-index="5">
+            </div>
+
+            <div class="otp-buttons">
+                <button class="verify-btn" id="verifyOtpBtn">
+                    Verify OTP
+                </button>
+                <button class="resend-btn" id="resendOtpBtn">
+                    Resend OTP
+                </button>
+            </div>
+
+            <div class="error-message" id="otpError"></div>
+            <div class="success-message" id="otpSuccess"></div>
+
+            <button class="back-btn" id="backToLoginBtn">
+                ← Back to Login
+            </button>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

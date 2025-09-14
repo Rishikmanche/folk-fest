@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telugu Folk Stories - Main Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <script src="auth.js"></script>
+    <script src="script2.js"></script>
+
+</head>
+<body>
+    <!-- SECURITY CHECK - HIDE CONTENT IF NOT AUTHENTICATED -->
+    <div id="authCheck">
+        <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+            <h2>🔒 Authentication Required</h2>
+            <p>Please login to access this page.</p>
+            <p>Redirecting to login page...</p>
+        </div>
+    </div>
+    
+    <div id="mainContent" style="display: none;">
+        <div class="decorative-elements">
+        <div class="folk-motif">🎵</div>
+        <div class="folk-motif">🏺</div>
+        <div class="folk-motif">🌾</div>
+        <div class="folk-motif">🎭</div>
+        <div class="folk-motif">🪘</div>
+        <div class="folk-motif">🎪</div>
+        <div class="folk-motif">🎨</div>
+        <div class="folk-motif">📿</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-logo">Telangana Folk Stories</div>
+            <div class="nav-user">
+                <span class="user-name">Welcome, User</span>
+                <button class="logout-btn" id="logoutBtn"><a href="index.html">Logout</a></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">Telangana Folk Heritage</h1>
+            <p class="subtitle">Preserve and Share Our Rich Cultural Heritage</p>
+            <p class="description">
+                Upload and share traditional folk songs, stories, videos, and photographs that represent 
+                the beautiful culture of Telangana. Help preserve our ancestral wisdom for future generations.
+            </p>
+        </div>
+
+        <div class="upload-grid">
+            <!-- Music/Audio Upload Card -->
+            <div class="upload-card">
+                <div class="card-icon music-icon">🎵</div>
+                <h3 class="card-title">Folk Songs & Music</h3>
+                <p class="card-description">
+                    Upload traditional Telangana folk songs, devotional music, and cultural melodies
+                </p>
+                
+                <div class="upload-area" id="musicUploadArea">
+                    <input type="file" id="musicInput" class="upload-input" accept="audio/*" multiple>
+                    <div class="upload-text">Click or drag to upload audio files</div>
+                    <div class="upload-hint">Supports MP3, WAV, M4A formats</div>
+                </div>
+                
+                <div class="file-preview" id="musicPreview">
+                    <div class="file-info" id="musicFileInfo"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="musicProgress"></div>
+                    </div>
+                    <div class="status-message" id="musicStatus"></div>
+                </div>
+                
+                <button class="upload-button" id="musicUploadBtn">Upload Music</button>
+            </div>
+
+            <!-- Video Upload Card -->
+            <div class="upload-card">
+                <div class="card-icon video-icon">🎬</div>
+                <h3 class="card-title">Folk Dance & Videos</h3>
+                <p class="card-description">
+                    Share traditional dance performances, cultural events, and folk celebrations
+                </p>
+                
+                <div class="upload-area" id="videoUploadArea">
+                    <input type="file" id="videoInput" class="upload-input" accept="video/*" multiple>
+                    <div class="upload-text">Click or drag to upload video files</div>
+                    <div class="upload-hint">Supports MP4, AVI, MOV formats</div>
+                </div>
+                
+                <div class="file-preview" id="videoPreview">
+                    <div class="file-info" id="videoFileInfo"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="videoProgress"></div>
+                    </div>
+                    <div class="status-message" id="videoStatus"></div>
+                </div>
+                
+                <button class="upload-button" id="videoUploadBtn">Upload Video</button>
+            </div>
+
+            <!-- Photo Capture/Upload Card -->
+            <div class="upload-card">
+                <div class="card-icon photo-icon">📸</div>
+                <h3 class="card-title">Cultural Photography</h3>
+                <p class="card-description">
+                    Capture or upload photos of folk art, traditional costumes, and cultural artifacts
+                </p>
+                
+                <div class="upload-area" id="photoUploadArea">
+                    <input type="file" id="photoInput" class="upload-input" accept="image/*" multiple>
+                    <div class="upload-text">Click or drag to upload photos</div>
+                    <div class="upload-hint">Supports JPG, PNG, WebP formats</div>
+                </div>
+
+                <div class="camera-preview" id="cameraPreview">
+                    <video class="camera-video" id="cameraVideo" autoplay></video>
+                    <button class="capture-btn" id="captureBtn">📷</button>
+                </div>
+
+                <canvas id="captureCanvas" style="display: none;"></canvas>
+                <img class="captured-image" id="capturedImage">
+                
+                <div class="file-preview" id="photoPreview">
+                    <div class="file-info" id="photoFileInfo"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="photoProgress"></div>
+                    </div>
+                    <div class="status-message" id="photoStatus"></div>
+                </div>
+                
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="upload-button" id="photoUploadBtn" style="flex: 1;">Upload Photos</button>
+                    <button class="upload-button" id="cameraBtn" style="flex: 1; background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);">
+                        Use Camera
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stories/Documents Upload Card -->
+            <div class="upload-card">
+                <div class="card-icon story-icon">📜</div>
+                <h3 class="card-title">Folk Stories & Documents</h3>
+                <p class="card-description">
+                    Upload traditional stories, historical documents, and cultural texts
+                </p>
+                
+                <div class="upload-area" id="storyUploadArea">
+                    <input type="file" id="storyInput" class="upload-input" accept=".pdf,.doc,.docx,.txt" multiple>
+                    <div class="upload-text">Click or drag to upload documents</div>
+                    <div class="upload-hint">Supports PDF, DOC, DOCX, TXT formats</div>
+                </div>
+                
+                <div class="file-preview" id="storyPreview">
+                    <div class="file-info" id="storyFileInfo"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="storyProgress"></div>
+                    </div>
+                    <div class="status-message" id="storyStatus"></div>
+                </div>
+                
+                <button class="upload-button" id="storyUploadBtn">Upload Documents</button>
+            </div>
+        </div>
+    </div>
+    </div> <!-- Close mainContent div -->
+</body>
+</html>
